@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine Card</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <!-- Top header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-heart">♥</span>
+        <span class="brand-title">Valentine Card</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="page">
+    <section class="card">
+      <div class="card-image-wrap">
+        <!-- Replace with your image -->
+        <img
+          class="card-image"
+          src="https://picsum.photos/800/500"
+          alt="A sweet valentine image"
+        />
+      </div>
+
+      <label class="input-label" for="message">Your message</label>
+      <textarea
+        id="message"
+        class="message-box"
+        placeholder="Write something cute..."
+        rows="4"
+      ></textarea>
+
+      <div class="button-row">
+        <button class="btn btn-yes" type="button" id="openModalBtn">
+          Open Popup
+        </button>
+        <button class="btn btn-no" type="button">
+          Maybe Later
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Backdrop + Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" id="modalCloseBtn" aria-label="Close">
+        X
+      </button>
+
+      <h2 class="modal-title" id="modalTitle">Be my Valentine?</h2>
+
+      <label class="input-label" for="modalText">Optional note</label>
+      <input
+        id="modalText"
+        class="modal-input"
+        type="text"
+        placeholder="Type a short note..."
+      />
+
+      <div class="button-row">
+        <button class="btn btn-yes" type="button" id="modalYesBtn">
+          Yes
+        </button>
+        <button class="btn btn-no" type="button" id="modalNoBtn">
+          No
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
