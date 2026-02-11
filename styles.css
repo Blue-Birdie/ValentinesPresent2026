@@ -33,7 +33,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(253, 226, 232, 0.85);
+  background: rgba(172, 0, 0, 0.185);
   backdrop-filter: blur(10px);
   border-bottom: 2px solid rgba(217, 75, 90, 0.25);
 }
@@ -96,7 +96,7 @@ body {
 }
 
 .page {
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 128px);
 }
 
 .gallery-page {
@@ -104,7 +104,7 @@ body {
 }
 
 .card {
-  width: min(860px, 100%);
+  width: auto;
   background: var(--pink-card);
   border: 2px solid rgba(217, 75, 90, 0.28);
   border-radius: var(--radius);
@@ -127,6 +127,7 @@ body {
   display: block;
   max-width: 100%;
   height: auto;
+  max-height: 60vh;
   object-fit: cover;
 }
 
