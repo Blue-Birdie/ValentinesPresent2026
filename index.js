@@ -27,14 +27,16 @@ noBtn.addEventListener("click", openModal);
 // Change left (green) button text when pressed
 modalYesBtn.addEventListener("click", () => {
     // Template behavior: toggle text
-    if (modalYesBtn.textContent === "Yes") {
+    if (modalYesBtn.textContent.length < 10) {
         modalYesBtn.textContent = "Are you sure?"
-    } else {
+    } else if (modalYesBtn.textContent.length < 80) {
         modalYesBtn.textContent = (() => {
             const words = modalYesBtn.textContent.split(" ");
             words.splice(1, 0, "really"); // insert after first word
             return words.join(" ");
         })();
+    } else {
+        modalBackdrop.textContent = "Aw okay 😭"
     }
 });
 
