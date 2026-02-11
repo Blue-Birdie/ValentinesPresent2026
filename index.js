@@ -1,5 +1,5 @@
 // Elements
-const openModalBtn = document.getElementById("openModalBtn");
+const noBtn = document.getElementById("noBtn");
 const modalBackdrop = document.getElementById("modalBackdrop");
 const modalYesBtn = document.getElementById("modalYesBtn");
 const modalNoBtn = document.getElementById("modalNoBtn");
@@ -22,13 +22,20 @@ function closeModal() {
 }
 
 // Open modal
-openModalBtn.addEventListener("click", openModal);
+noBtn.addEventListener("click", openModal);
 
 // Change left (green) button text when pressed
 modalYesBtn.addEventListener("click", () => {
     // Template behavior: toggle text
-    modalYesBtn.textContent =
-    modalYesBtn.textContent === "Yes" ? "Yay! 💖" : "Yes";
+    if (modalYesBtn.textContent === "Yes") {
+        modalYesBtn.textContent = "Are you sure?"
+    } else {
+        modalYesBtn.textContent = (() => {
+            const words = modalYesBtn.textContent.split(" ");
+            words.splice(1, 0, "really"); // insert after first word
+            return words.join(" ");
+        })();
+    }
 });
 
 // Close modal with red button or X
@@ -43,6 +50,6 @@ modalBackdrop.addEventListener("click", (e) => {
 // Close modal on Escape
 document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modalBackdrop.classList.contains("is-open")) {
-    closeModal();
+        closeModal();
     }
 });
