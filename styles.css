@@ -88,12 +88,19 @@ body {
 }
 
 /* Page layout */
-.page {
-  min-height: calc(100vh - 64px);
+.page, .gallery-page {
   display: flex;              /* center card */
   align-items: center;
   justify-content: center;
   padding: 28px 18px;
+}
+
+.page {
+  min-height: calc(100vh - 64px);
+}
+
+.gallery-page {
+  min-height: calc(90vh - 64px);
 }
 
 .card {
@@ -192,6 +199,10 @@ body {
   filter: brightness(0.95);
 }
 
+.btn-ok {
+  background: rgba(192, 0, 96, 0.26);
+}
+
 /* Modal + backdrop with blur */
 .modal-backdrop {
   position: fixed;
@@ -228,6 +239,10 @@ body {
   margin: 0;
   font-size: 20px;
   letter-spacing: 0.2px;
+}
+
+.modalTextWrapper {
+  text-align: center;
 }
 
 .modal-close {
