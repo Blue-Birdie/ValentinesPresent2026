@@ -2,6 +2,7 @@
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const areYouSure_ModalBackdrop = document.getElementById("modalBackdrop-1");
+const areYouSure_Title = document.getElementById("modalTitle-1");
 const yay_ModalBackdrop = document.getElementById("modalBackdrop-2");
 const modalYesBtn = document.getElementById("modalYesBtn");
 const modalNoBtn = document.getElementById("modalNoBtn");
@@ -44,15 +45,11 @@ yesBtn.addEventListener("click", openModal2);
 // Change left (green) button text when pressed
 modalYesBtn.addEventListener("click", () => {
     // Template behavior: toggle text
-    if (modalYesBtn.textContent.length < 10) {
-        modalYesBtn.textContent = "Are you sure?"
-    } else {
-        modalYesBtn.textContent = (() => {
-            const words = modalYesBtn.textContent.split(" ");
-            words.splice(2, 0, "really"); // insert after first word
-            return words.join(" ");
-        })();
-    }
+    areYouSure_Title.textContent = (() => {
+        const words = areYouSure_Title.textContent.split(" ");
+        words.splice(2, 0, "really"); // insert after first word
+        return words.join(" ");
+    })();
 });
 
 // Close modal with red button or X
